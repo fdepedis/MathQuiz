@@ -10,8 +10,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Tracks the counter of  for Team A
+    // number of total questions
+    private static final int NUM_OF_QUESTIONS = 6;
+
+    // Tracks the counter of question
     private int countQuestion = 1;
+
+    // Tracks the score of the quiz
+    private int score = 0;
 
     // Tracks the status of the answer
     private boolean status;
@@ -21,6 +27,13 @@ public class MainActivity extends AppCompatActivity {
     private final int answer3 = 114;
     private final int answer4 = 9;
     private final int answer5 = 625;
+    private final boolean answer6 = true;
+
+    // Declare view
+    private TextView tvQuestion;
+    private TextView idQuestion;
+    private EditText etAnswer;
+    private Button btnDisable;
 
 
     @Override
@@ -36,14 +49,21 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitAnswer(View view){
 
-        if (countQuestion <= 5) {
+        etAnswer = (EditText) findViewById(R.id.idAnswer);
+
+        // verify if EditText is Empty and the question is <=5 (number of questions)
+        if (!etAnswer.getText().toString().isEmpty() && countQuestion <= NUM_OF_QUESTIONS) {
             status = verifyAnswer(countQuestion);
             if (status) {
                 okAnswer();
+                //updateScore();
             }
             else {
                 Toast.makeText(getApplicationContext(),R.string.incorrectAnswer, Toast.LENGTH_SHORT).show();
             }
+        }
+        else {
+            Toast.makeText(getApplicationContext(),R.string.emptyAnswer, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -65,9 +85,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayQuestion(int countQuestion){
 
-        TextView tvQuestion = (TextView) findViewById(R.id.textQuestion);
-        TextView idQuestion = (TextView) findViewById(R.id.idQuestion);
+        tvQuestion = (TextView) findViewById(R.id.textQuestion);
+        idQuestion = (TextView) findViewById(R.id.idQuestion);
+        etAnswer = (EditText) findViewById(R.id.idAnswer);
+        btnDisable = (Button) findViewById(R.id.btnSubmit);
 
+        // find which question need to show
         if (countQuestion == 1) {
             //question = question1;
             tvQuestion.setText(R.string.question1);
@@ -93,13 +116,18 @@ public class MainActivity extends AppCompatActivity {
             tvQuestion.setText(R.string.question5);
             idQuestion.setText(Integer.toString(countQuestion));
         }
+        /*
+        else if (countQuestion == 6) {
+            //question = question6;
+            tvQuestion.setText(R.string.question6);
+            idQuestion.setText(Integer.toString(countQuestion));
+        }
+        */
         else{
             tvQuestion.setText(R.string.completedQuiz);
-            idQuestion.setText("");
-            EditText etDisable = (EditText) findViewById(R.id.idAnswer);
-            Button btnDisable = (Button) findViewById(R.id.btnSubmit);
-            etDisable.setEnabled(false);
-            etDisable.setHint("");
+            idQuestion.setText(R.string.resetQuestions);
+            etAnswer.setEnabled(false);
+            etAnswer.setHint(R.string.resetQuestions);
             btnDisable.setEnabled(false);
         }
     }
@@ -111,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public boolean verifyAnswer(int countQuestion){
 
-        EditText etAnswer = (EditText) findViewById(R.id.idAnswer);
+        etAnswer = (EditText) findViewById(R.id.idAnswer);
 
         if (countQuestion == 1 && Integer.parseInt(etAnswer.getText().toString()) == answer1) {
             etAnswer.setText(R.string.resetQuestions);
@@ -133,6 +161,12 @@ public class MainActivity extends AppCompatActivity {
             etAnswer.setText(R.string.resetQuestions);
             return true;
         }
+        /*
+        else if (countQuestion == 6 && Integer.parseInt(etAnswer.getText().toString()) == answer6) {
+            etAnswer.setText(R.string.resetQuestions);
+            return true;
+        }
+        */
         else{
             return false;
         }

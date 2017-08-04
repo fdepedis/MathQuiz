@@ -20,6 +20,9 @@
     <!-- string for message incorrect answer -->
     <string name="incorrectAnswer">Wrong Answer! Try again!</string>
 
+    <!-- string for message empty answer -->
+    <string name="emptyAnswer">Please, insert answer!</string>
+
     <!-- string for button label -->
     <string name="btnAnswer">Submit</string>
 
@@ -36,7 +39,7 @@
     <string name="question3">Calculates double of 57</string>
 
     <!-- string for Question 4 -->
-    <string name="question4">Find the square root of 81</string>
+    <string name="question4">Which expression represents the value 15</string>
 
     <!-- string for Question 5 -->
     <string name="question5">Calculates the square of 25</string>
