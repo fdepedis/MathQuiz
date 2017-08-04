@@ -10,15 +10,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int countAnswer = 1;
-    private String question = "";
-    private final String question1 = "Quanto fa 3 x 2 ?";
-    private final String question2 = "Calcola il risultato di: (10 - 8)/2";
-    private final String question3 = "Calcola il doppio di 57";
-    private final String question4 = "Trova la radice quadrata di 81";
-    private final String question5 = "Calcola il quadrato di 25";
+    // Tracks the counter of  for Team A
+    private int countQuestion = 1;
 
-    private final int answer1 = 6;
+    // Tracks the status of the answer
+    private boolean status;
+
+    private final int answer1 = 18;
     private final int answer2 = 1;
     private final int answer3 = 114;
     private final int answer4 = 9;
@@ -30,64 +28,73 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        displayQuestion(countAnswer);
+        displayQuestion(countQuestion);
     }
 
+    /**
+     * Method called from onClick properties and handle the click event button.
+     */
     public void submitAnswer(View view){
 
-        boolean status = false;
-
-        if (countAnswer <= 5) {
-            status = verifyAnswer(countAnswer);
+        if (countQuestion <= 5) {
+            status = verifyAnswer(countQuestion);
             if (status) {
                 okAnswer();
             }
             else {
-                Toast.makeText(getApplicationContext(),"Risposta errata! Ritenta...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.incorrectAnswer, Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-
+    /**
+     * Method called to display message for correct answer
+     * and increase the counter of next question.
+     *
+     */
     public void okAnswer(){
-        countAnswer ++;
-        Toast.makeText(getApplicationContext(),"Risposta corretta!", Toast.LENGTH_SHORT).show();
-        displayQuestion(countAnswer);
+        countQuestion ++;
+        Toast.makeText(getApplicationContext(),R.string.correctAnswer, Toast.LENGTH_SHORT).show();
+        displayQuestion(countQuestion);
     }
 
-
-    public void displayQuestion(int countAnswer){
+    /**
+     * Method called to diplay the sequence question.
+     *
+     * @param countQuestion identify the actual question
+     */
+    public void displayQuestion(int countQuestion){
 
         TextView tvQuestion = (TextView) findViewById(R.id.textQuestion);
         TextView idQuestion = (TextView) findViewById(R.id.idQuestion);
 
-        if (countAnswer == 1) {
-            question = question1;
-            tvQuestion.setText(question);
-            idQuestion.setText(Integer.toString(countAnswer));
+        if (countQuestion == 1) {
+            //question = question1;
+            tvQuestion.setText(R.string.question1);
+            idQuestion.setText(Integer.toString(countQuestion));
         }
-        else if (countAnswer == 2) {
-            question = question2;
-            tvQuestion.setText(question);
-            idQuestion.setText(Integer.toString(countAnswer));
+        else if (countQuestion == 2) {
+            //question = question2;
+            tvQuestion.setText(R.string.question2);
+            idQuestion.setText(Integer.toString(countQuestion));
         }
-        else if (countAnswer == 3) {
-            question = question3;
-            tvQuestion.setText(question);
-            idQuestion.setText(Integer.toString(countAnswer));
+        else if (countQuestion == 3) {
+            //question = question3;
+            tvQuestion.setText(R.string.question3);
+            idQuestion.setText(Integer.toString(countQuestion));
         }
-        else if (countAnswer == 4) {
-            question = question4;
-            tvQuestion.setText(question);
-            idQuestion.setText(Integer.toString(countAnswer));
+        else if (countQuestion == 4) {
+            //question = question4;
+            tvQuestion.setText(R.string.question4);
+            idQuestion.setText(Integer.toString(countQuestion));
         }
-        else if (countAnswer == 5) {
-            question = question5;
-            tvQuestion.setText(question);
-            idQuestion.setText(Integer.toString(countAnswer));
+        else if (countQuestion == 5) {
+            //question = question5;
+            tvQuestion.setText(R.string.question5);
+            idQuestion.setText(Integer.toString(countQuestion));
         }
         else{
-            tvQuestion.setText("Math Quiz completato!!!");
+            tvQuestion.setText(R.string.completedQuiz);
             idQuestion.setText("");
             EditText etDisable = (EditText) findViewById(R.id.idAnswer);
             Button btnDisable = (Button) findViewById(R.id.btnSubmit);
@@ -97,29 +104,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-    public boolean verifyAnswer(int countAnswer){
+    /**
+     * Method to verify if the answer is correct or not
+     *
+     * @param countQuestion identify the actual question
+     */
+    public boolean verifyAnswer(int countQuestion){
 
         EditText etAnswer = (EditText) findViewById(R.id.idAnswer);
 
-        if (countAnswer == 1 && Integer.parseInt(etAnswer.getText().toString()) == answer1) {
-            etAnswer.setText("");
+        if (countQuestion == 1 && Integer.parseInt(etAnswer.getText().toString()) == answer1) {
+            etAnswer.setText(R.string.resetQuestions);
             return true;
         }
-        else if (countAnswer == 2 && Integer.parseInt(etAnswer.getText().toString()) == answer2) {
-            etAnswer.setText("");
+        else if (countQuestion == 2 && Integer.parseInt(etAnswer.getText().toString()) == answer2) {
+            etAnswer.setText(R.string.resetQuestions);
             return true;
         }
-        else if (countAnswer == 3 && Integer.parseInt(etAnswer.getText().toString()) == answer3) {
-            etAnswer.setText("");
+        else if (countQuestion == 3 && Integer.parseInt(etAnswer.getText().toString()) == answer3) {
+            etAnswer.setText(R.string.resetQuestions);
             return true;
         }
-        else if (countAnswer == 4 && Integer.parseInt(etAnswer.getText().toString()) == answer4) {
-            etAnswer.setText("");
+        else if (countQuestion == 4 && Integer.parseInt(etAnswer.getText().toString()) == answer4) {
+            etAnswer.setText(R.string.resetQuestions);
             return true;
         }
-        else if (countAnswer == 5 && Integer.parseInt(etAnswer.getText().toString()) == answer5) {
-            etAnswer.setText("");
+        else if (countQuestion == 5 && Integer.parseInt(etAnswer.getText().toString()) == answer5) {
+            etAnswer.setText(R.string.resetQuestions);
             return true;
         }
         else{

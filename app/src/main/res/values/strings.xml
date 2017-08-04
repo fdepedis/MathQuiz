@@ -8,6 +8,18 @@
     <!-- string for question counter -->
     <string name="numQuestions">1</string>
 
+    <!-- string for reset question field -->
+    <string name="resetQuestions"> </string>
+
+    <!-- string for message quiz completed -->
+    <string name="completedQuiz">Math Quiz completed!!!</string>
+
+    <!-- string for message correct answer -->
+    <string name="correctAnswer">Correct Answer!</string>
+
+    <!-- string for message incorrect answer -->
+    <string name="incorrectAnswer">Wrong Answer! Try again!</string>
+
     <!-- string for button label -->
     <string name="btnAnswer">Submit</string>
 
@@ -18,17 +30,17 @@
     <string name="question1">How much does 9 x 2?</string>
 
     <!-- string for Question 2 -->
-    <string name="question2">How much does 9 x 2?</string>
+    <string name="question2">Calculates the result of: (10 - 8) / 2</string>
 
     <!-- string for Question 3 -->
-    <string name="question3">How much does 9 x 2?</string>
+    <string name="question3">Calculates double of 57</string>
 
     <!-- string for Question 4 -->
-    <string name="question4">How much does 9 x 2?</string>
+    <string name="question4">Find the square root of 81</string>
 
     <!-- string for Question 5 -->
-    <string name="question5">How much does 9 x 2?</string>
+    <string name="question5">Calculates the square of 25</string>
 
     <!-- string for Question 6 -->
-    <string name="question6">How much does 9 x 2?</string>
+    <string name="question6">The "1, 2, 3, 5, 8, 13" series is a series of Fibonacci</string>
 </resources>
