@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Math Quiz</string>
+
+    <string name="title">Math Quiz</string>
+    <string name="numQuestions">1</string>
+    <string name="btnAnswer">Submit</string>
+</resources>
