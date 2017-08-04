@@ -1,7 +1,34 @@
 <resources>
+    <!-- string for app name -->
     <string name="app_name">Math Quiz</string>
 
+    <!-- string for title -->
     <string name="title">Math Quiz</string>
+
+    <!-- string for question counter -->
     <string name="numQuestions">1</string>
+
+    <!-- string for button label -->
     <string name="btnAnswer">Submit</string>
+
+    <!-- string for hint TextView -->
+    <string name="insertAnswer">Insert answer</string>
+
+    <!-- string for Question 1 -->
+    <string name="question1">How much does 9 x 2?</string>
+
+    <!-- string for Question 2 -->
+    <string name="question2">How much does 9 x 2?</string>
+
+    <!-- string for Question 3 -->
+    <string name="question3">How much does 9 x 2?</string>
+
+    <!-- string for Question 4 -->
+    <string name="question4">How much does 9 x 2?</string>
+
+    <!-- string for Question 5 -->
+    <string name="question5">How much does 9 x 2?</string>
+
+    <!-- string for Question 6 -->
+    <string name="question6">How much does 9 x 2?</string>
 </resources>

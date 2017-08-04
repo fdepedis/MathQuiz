@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="........."
+            android:hint="....."
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -50,10 +50,10 @@
         android:layout_gravity="center"
         android:layout_marginBottom="25dp"
         android:layout_marginTop="25dp"
-        android:hint="Answer"
+        android:hint="@string/insertAnswer"
         android:inputType="number"
-        android:paddingLeft="16dp"
-        android:paddingRight="200dp" />
+        android:paddingStart="16dp"
+        android:paddingEnd="200dp" />
 
     <Button
         android:id="@+id/btnSubmit"
