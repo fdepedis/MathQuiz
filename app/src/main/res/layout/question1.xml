@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/question1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/border">
+    <!--tools:showIn="@layout/activity_main"-->
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/radioBtn1.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="prova1"
+            android:textAppearance="?android:textAppearanceMedium" />
+        <RadioButton
+            android:id="@+id/radioBtn1.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="prova2"
+            android:textAppearance="?android:textAppearanceMedium" />
+        <RadioButton
+            android:id="@+id/radioBtn1.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="prova3"
+            android:textAppearance="?android:textAppearanceMedium" />
+        <RadioButton
+            android:id="@+id/radioBtn1.4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="prova4"
+            android:textAppearance="?android:textAppearanceMedium" />
+        <RadioButton
+            android:id="@+id/radioBtn1.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="prova5"
+            android:textAppearance="?android:textAppearanceMedium" />
+    </RadioGroup>
+
+</FrameLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvQuestion;
     private TextView idQuestion;
     private EditText etAnswer;
-    private Button btnDisable;
+    private Button btnSubmit;
 
+    final FrameLayout frameQ1 = (FrameLayout) findViewById(R.id.question1);
+    final FrameLayout frameQ2 = (FrameLayout) findViewById(R.id.question2);
+    final FrameLayout frameQ3 = (FrameLayout) findViewById(R.id.question3);
+    final FrameLayout frameQ4 = (FrameLayout) findViewById(R.id.question4);
+    final FrameLayout frameQ5 = (FrameLayout) findViewById(R.id.question5);
+    final FrameLayout frameQ6 = (FrameLayout) findViewById(R.id.question6);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,47 +95,87 @@ public class MainActivity extends AppCompatActivity {
         tvQuestion = (TextView) findViewById(R.id.textQuestion);
         idQuestion = (TextView) findViewById(R.id.idQuestion);
         etAnswer = (EditText) findViewById(R.id.idAnswer);
-        btnDisable = (Button) findViewById(R.id.btnSubmit);
+        btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
         // find which question need to show
         if (countQuestion == 1) {
             //question = question1;
             tvQuestion.setText(R.string.question1);
             idQuestion.setText(Integer.toString(countQuestion));
+            frameQ1.setVisibility(View.VISIBLE);
+            frameQ2.setVisibility(View.INVISIBLE);
+            frameQ3.setVisibility(View.INVISIBLE);
+            frameQ4.setVisibility(View.INVISIBLE);
+            frameQ5.setVisibility(View.INVISIBLE);
+            frameQ6.setVisibility(View.INVISIBLE);
         }
         else if (countQuestion == 2) {
             //question = question2;
             tvQuestion.setText(R.string.question2);
             idQuestion.setText(Integer.toString(countQuestion));
+            frameQ1.setVisibility(View.INVISIBLE);
+            frameQ2.setVisibility(View.VISIBLE);
+            frameQ3.setVisibility(View.INVISIBLE);
+            frameQ4.setVisibility(View.INVISIBLE);
+            frameQ5.setVisibility(View.INVISIBLE);
+            frameQ6.setVisibility(View.INVISIBLE);
         }
         else if (countQuestion == 3) {
             //question = question3;
             tvQuestion.setText(R.string.question3);
             idQuestion.setText(Integer.toString(countQuestion));
+            frameQ1.setVisibility(View.INVISIBLE);
+            frameQ2.setVisibility(View.INVISIBLE);
+            frameQ3.setVisibility(View.VISIBLE);
+            frameQ4.setVisibility(View.INVISIBLE);
+            frameQ5.setVisibility(View.INVISIBLE);
+            frameQ6.setVisibility(View.INVISIBLE);
         }
         else if (countQuestion == 4) {
             //question = question4;
             tvQuestion.setText(R.string.question4);
             idQuestion.setText(Integer.toString(countQuestion));
+            frameQ1.setVisibility(View.INVISIBLE);
+            frameQ2.setVisibility(View.INVISIBLE);
+            frameQ3.setVisibility(View.INVISIBLE);
+            frameQ4.setVisibility(View.VISIBLE);
+            frameQ5.setVisibility(View.INVISIBLE);
+            frameQ6.setVisibility(View.INVISIBLE);
         }
         else if (countQuestion == 5) {
             //question = question5;
             tvQuestion.setText(R.string.question5);
             idQuestion.setText(Integer.toString(countQuestion));
+            frameQ1.setVisibility(View.INVISIBLE);
+            frameQ2.setVisibility(View.INVISIBLE);
+            frameQ3.setVisibility(View.INVISIBLE);
+            frameQ4.setVisibility(View.INVISIBLE);
+            frameQ5.setVisibility(View.VISIBLE);
+            frameQ6.setVisibility(View.INVISIBLE);
         }
-        /*
         else if (countQuestion == 6) {
             //question = question6;
             tvQuestion.setText(R.string.question6);
             idQuestion.setText(Integer.toString(countQuestion));
+            frameQ1.setVisibility(View.INVISIBLE);
+            frameQ2.setVisibility(View.INVISIBLE);
+            frameQ3.setVisibility(View.INVISIBLE);
+            frameQ4.setVisibility(View.INVISIBLE);
+            frameQ5.setVisibility(View.INVISIBLE);
+            frameQ6.setVisibility(View.VISIBLE);
         }
-        */
         else{
             tvQuestion.setText(R.string.completedQuiz);
             idQuestion.setText(R.string.resetQuestions);
             etAnswer.setEnabled(false);
             etAnswer.setHint(R.string.resetQuestions);
-            btnDisable.setEnabled(false);
+            btnSubmit.setEnabled(false);
+            frameQ1.setVisibility(View.INVISIBLE);
+            frameQ2.setVisibility(View.INVISIBLE);
+            frameQ3.setVisibility(View.INVISIBLE);
+            frameQ4.setVisibility(View.INVISIBLE);
+            frameQ5.setVisibility(View.INVISIBLE);
+            frameQ6.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -162,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         /*
-        else if (countQuestion == 6 && Integer.parseInt(etAnswer.getText().toString()) == answer6) {
+        else if (countQuestion == 6 && etAnswer.getText().toString()) == answer6) {
             etAnswer.setText(R.string.resetQuestions);
             return true;
         }

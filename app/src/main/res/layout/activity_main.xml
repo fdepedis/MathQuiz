@@ -21,6 +21,7 @@
         android:id="@+id/answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <TextView
@@ -28,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="4"
+            android:gravity="center"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:text="@string/numQuestions"
@@ -43,24 +45,38 @@
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/idAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="25dp"
-        android:layout_marginTop="25dp"
-        android:hint="@string/insertAnswer"
-        android:inputType="number"
-        android:paddingStart="16dp"
-        android:paddingEnd="200dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="30dp">
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:onClick="submitAnswer"
-        android:text="@string/btnAnswer" />
+        <include layout="@layout/question1" />
+
+        <include layout="@layout/question2" />
+
+        <include layout="@layout/question3" />
+
+        <include layout="@layout/question4" />
+
+        <include layout="@layout/question5" />
+
+        <include layout="@layout/question6" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:onClick="submitAnswer"
+            android:text="@string/btnAnswer" />
+
+    </RelativeLayout>
 
 </LinearLayout>
