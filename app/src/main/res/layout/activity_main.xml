@@ -1,82 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="it.flaviodepedis.mathquiz.MainActivity">
+    android:fillViewport="true"
+    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
-        android:layout_marginTop="26dp"
-        android:gravity="center_horizontal"
-        android:text="@string/title"
-        android:textSize="26sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:id="@+id/answer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        tools:context="it.flaviodepedis.mathquiz.MainActivity">
 
         <TextView
-            android:id="@+id/idQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:gravity="center"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:text="@string/numQuestions"
-            android:textSize="20sp" />
+            android:layout_marginBottom="26dp"
+            android:layout_marginTop="26dp"
+            android:gravity="center_horizontal"
+            android:text="@string/title"
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textQuestion"
+        <LinearLayout
+            android:id="@+id/answer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="....."
-            android:textSize="20sp" />
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/idQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/numQuestions"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/hint"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_margin="20dp">
+
+            <include
+                android:id="@+id/question1"
+                layout="@layout/question1" />
+
+            <include
+                android:id="@+id/question2"
+                layout="@layout/question2" />
+
+            <include
+                android:id="@+id/question3"
+                layout="@layout/question3" />
+
+            <include
+                android:id="@+id/question4"
+                layout="@layout/question4" />
+
+            <include
+                android:id="@+id/question5"
+                layout="@layout/question5" />
+
+            <include
+                android:id="@+id/question6"
+                layout="@layout/question6" />
+
+            <include
+                android:id="@+id/score"
+                layout="@layout/score" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <Button
+                android:id="@+id/btnSubmit"
+                style="@style/buttonTheme"
+                android:onClick="submitAnswer"
+                android:text="@string/btnAnswer" />
+
+            <Button
+                android:id="@+id/btnReset"
+                style="@style/buttonTheme"
+                android:onClick="submitReset"
+                android:text="@string/btnReset" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_margin="30dp">
-
-        <include layout="@layout/question1" />
-
-        <include layout="@layout/question2" />
-
-        <include layout="@layout/question3" />
-
-        <include layout="@layout/question4" />
-
-        <include layout="@layout/question5" />
-
-        <include layout="@layout/question6" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center_horizontal"
-            android:onClick="submitAnswer"
-            android:text="@string/btnAnswer" />
-
-    </RelativeLayout>
-
-</LinearLayout>
+</ScrollView>

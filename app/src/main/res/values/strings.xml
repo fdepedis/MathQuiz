@@ -8,6 +8,12 @@
     <!-- string for question counter -->
     <string name="numQuestions">1</string>
 
+    <!-- string for counter score -->
+    <string name="score">The Score is:</string>
+
+    <!-- string for hint field -->
+    <string name="hint">.....</string>
+
     <!-- string for reset question field -->
     <string name="resetQuestions"> </string>
 
@@ -23,14 +29,29 @@
     <!-- string for message empty answer -->
     <string name="emptyAnswer">Please, insert answer!</string>
 
-    <!-- string for button label -->
+    <!-- string for button submit label -->
     <string name="btnAnswer">Submit</string>
+
+    <!-- string for button reset label -->
+    <string name="btnReset">Reset</string>
 
     <!-- string for hint TextView -->
     <string name="insertAnswer">Insert answer</string>
 
     <!-- string for Question 1 -->
-    <string name="question1">How much does 9 x 2?</string>
+    <string name="question1">How much does 9 x 2 ?</string>
+
+    <!-- string for Answer 1_1 -->
+    <string name="ans1_1">9</string>
+
+    <!-- string for Answer 1_2 -->
+    <string name="ans1_2">18</string>
+
+    <!-- string for Answer 1_3 -->
+    <string name="ans1_3">4.5</string>
+
+    <!-- string for Answer 1_4 -->
+    <string name="ans1_4">20</string>
 
     <!-- string for Question 2 -->
     <string name="question2">Calculates the result of: (10 - 8) / 2</string>
@@ -38,12 +59,58 @@
     <!-- string for Question 3 -->
     <string name="question3">Calculates double of 57</string>
 
+    <!-- string for Answer 3_1 -->
+    <string name="ans3_1">104</string>
+
+    <!-- string for Answer 3_2 -->
+    <string name="ans3_2">114</string>
+
+    <!-- string for Answer 3_3 -->
+    <string name="ans3_3">100</string>
+
+    <!-- string for Answer 3_4 -->
+    <string name="ans3_4">57</string>
+
     <!-- string for Question 4 -->
-    <string name="question4">Which expression represents the value 15</string>
+    <string name="question4">Which formula expression represents the value 15 ?</string>
+
+    <!-- string for Answer 4_1 -->
+    <string name="ans4_1">8 + 7 * 2</string>
+
+    <!-- string for Answer 4_2 -->
+    <string name="ans4_2">1 + 12</string>
+
+    <!-- string for Answer 4_3 -->
+    <string name="ans4_3">7 + 8</string>
+
+    <!-- string for Answer 4_4 -->
+    <string name="ans4_4">16 - 1</string>
 
     <!-- string for Question 5 -->
     <string name="question5">Calculates the square of 25</string>
 
+    <!-- string for Answer 5_1 -->
+    <string name="ans5_1">first number * consecutive first number concatenate 25</string>
+
+    <!-- string for Answer 5_2 -->
+    <string name="ans5_2">325</string>
+
+    <!-- string for Answer 5_3 -->
+    <string name="ans5_3">625</string>
+
+    <!-- string for Answer 5_4 -->
+    <string name="ans5_4">125</string>
+
+    <!-- string for note about question 5 -->
+    <string name="note">Note: The first method is scientific approved</string>
+
     <!-- string for Question 6 -->
     <string name="question6">The "1, 2, 3, 5, 8, 13" series is a series of Fibonacci</string>
+
+    <!-- string for Answer 6_1 -->
+    <string name="ans6_1">True</string>
+
+    <!-- string for Answer 6_2 -->
+    <string name="ans6_2">False</string>
+
 </resources>

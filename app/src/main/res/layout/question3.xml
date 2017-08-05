@@ -1,48 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/question3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/border">
-    <!--tools:showIn="@layout/activity_main"-->
+    <!-- tools:showIn="@layout/activity_main" -->
 
     <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+        style="@style/questionTheme">
+
         <RadioButton
-            android:id="@+id/radioBtn3.1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="prova3.1"
-            android:textAppearance="?android:textAppearanceMedium" />
+            android:id="@+id/radioBtn3_1"
+            style="@style/choiceTheme"
+            android:text="@string/ans3_1" />
         <RadioButton
-            android:id="@+id/radioBtn3.2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="prova3.2"
-            android:textAppearance="?android:textAppearanceMedium" />
+            android:id="@+id/radioBtn3_2"
+            style="@style/choiceTheme"
+            android:text="@string/ans3_2" />
         <RadioButton
-            android:id="@+id/radioBtn3.3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="prova3.3"
-            android:textAppearance="?android:textAppearanceMedium" />
+            android:id="@+id/radioBtn3_3"
+            style="@style/choiceTheme"
+            android:text="@string/ans3_3" />
         <RadioButton
-            android:id="@+id/radioBtn3.4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="prova3.4"
-            android:textAppearance="?android:textAppearanceMedium" />
-        <RadioButton
-            android:id="@+id/radioBtn3.5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="prova3.5"
-            android:textAppearance="?android:textAppearanceMedium" />
+            android:id="@+id/radioBtn3_4"
+            style="@style/choiceTheme"
+            android:text="@string/ans3_4" />
     </RadioGroup>
 
 </FrameLayout>
