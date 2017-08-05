@@ -80,10 +80,6 @@
                 android:id="@+id/question6"
                 layout="@layout/question6" />
 
-            <include
-                android:id="@+id/score"
-                layout="@layout/score" />
-
         </RelativeLayout>
 
         <LinearLayout

@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     // Declare view
     private TextView tvQuestion;
     private TextView idQuestion;
-    private TextView tvScore;
     private Button btnSubmit;
     private FrameLayout frameQ1;
     private FrameLayout frameQ2;
@@ -49,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         frameQ4 = (FrameLayout) findViewById(R.id.question4);
         frameQ5 = (FrameLayout) findViewById(R.id.question5);
         frameQ6 = (FrameLayout) findViewById(R.id.question6);
-        tvScore = (TextView) findViewById(R.id.tvScore);
 
         // setup all FrameLayout to INVISIBLE
         setupViewInvisible();
@@ -68,9 +66,8 @@ public class MainActivity extends AppCompatActivity {
             status = verifyAnswer(countQuestion);
             if (status) {
                 okAnswer();
-                updateScore();
             } else {
-                Toast.makeText(getApplicationContext(), R.string.incorrectAnswer, Toast.LENGTH_SHORT).show();
+                koAnswer();
             }
         }
     }
@@ -97,6 +94,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Method called to display message for incorrect answer
+     * and increase the counter of next question.
+     */
+    public void koAnswer() {
+        countQuestion++;
+        Toast.makeText(getApplicationContext(), R.string.incorrectAnswer, Toast.LENGTH_SHORT).show();
+        displayQuestion(countQuestion);
+    }
+
+    /**
      * Method for count score.
      */
     public void updateScore() {
@@ -113,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
         frameQ4.setVisibility(View.INVISIBLE);
         frameQ5.setVisibility(View.INVISIBLE);
         frameQ6.setVisibility(View.INVISIBLE);
-        tvScore.setVisibility(View.INVISIBLE);
     }
 
     /**
@@ -169,10 +175,10 @@ public class MainActivity extends AppCompatActivity {
                 tvQuestion.setText(R.string.completedQuiz);
                 idQuestion.setText(R.string.resetQuestions);
                 setupViewInvisible();
-                tvScore.setVisibility(View.VISIBLE);
-                String msg = getString(R.string.score) + " " + String.valueOf(score);
-                tvScore.setText(msg);
                 btnSubmit.setEnabled(false);
+
+                // Show Toast message for score
+                Toast.makeText(getApplicationContext(), getString(R.string.score) + " " + String.valueOf(score), Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -203,16 +209,20 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         } else if (countQuestion == 4) {
-            CheckBox hasCheckBox3 = (CheckBox) findViewById(R.id.checkbox4_3);
-            CheckBox hasCheckBox4 = (CheckBox) findViewById(R.id.checkbox4_4);
-            if (hasCheckBox3.isChecked() && hasCheckBox4.isChecked()) {
+            CheckBox hasCheckBox4_1 = (CheckBox) findViewById(R.id.checkbox4_1);
+            CheckBox hasCheckBox4_2 = (CheckBox) findViewById(R.id.checkbox4_2);
+            CheckBox hasCheckBox4_3 = (CheckBox) findViewById(R.id.checkbox4_3);
+            CheckBox hasCheckBox4_4 = (CheckBox) findViewById(R.id.checkbox4_4);
+            if (!hasCheckBox4_1.isChecked() && !hasCheckBox4_2.isChecked() && hasCheckBox4_3.isChecked() && hasCheckBox4_4.isChecked() ) {
                 updateScore();
                 return true;
             }
         } else if (countQuestion == 5) {
-            CheckBox hasCheckBox1 = (CheckBox) findViewById(R.id.checkbox5_1);
-            CheckBox hasCheckBox3 = (CheckBox) findViewById(R.id.checkbox5_3);
-            if (hasCheckBox1.isChecked() && hasCheckBox3.isChecked()) {
+            CheckBox hasCheckBox5_1 = (CheckBox) findViewById(R.id.checkbox5_1);
+            CheckBox hasCheckBox5_2 = (CheckBox) findViewById(R.id.checkbox5_2);
+            CheckBox hasCheckBox5_3 = (CheckBox) findViewById(R.id.checkbox5_3);
+            CheckBox hasCheckBox5_4 = (CheckBox) findViewById(R.id.checkbox5_4);
+            if (hasCheckBox5_1.isChecked() && !hasCheckBox5_2.isChecked() && hasCheckBox5_3.isChecked() && !hasCheckBox5_4.isChecked()) {
                 updateScore();
                 return true;
             }
